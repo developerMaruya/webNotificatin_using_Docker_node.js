@@ -1,0 +1,17 @@
+{
+  "name": "web-push-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "install": "^0.13.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22",
+    "web-push": "^3.4.5"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}

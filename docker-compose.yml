@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_DATABASE: test
+    volumes:
+      - db_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ''
+  app:
+    build: .
+    restart: always
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+volumes:
+  db_data:
